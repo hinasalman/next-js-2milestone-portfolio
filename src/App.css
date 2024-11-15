@@ -1,0 +1,222 @@
+/* Global Reset and Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Main App Layout */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+/* Hover Effect for Logo */
+.App-logo:hover {
+  transform: scale(1.1); /* Enlarge logo on hover */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Keyframe Animation for Logo */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header Styling */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add an animated gradient background */
+.App-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(45deg, #ff6f61, #ff6347, #ffb6c1, #61dafb);
+  background-size: 400% 400%;
+  animation: gradient-background 5s ease infinite;
+  z-index: -1; /* Put it behind content */
+}
+
+/* Keyframe for gradient animation */
+@keyframes gradient-background {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Add additional styling to the heading */
+.App-header h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Add shadow to text */
+  margin-bottom: 20px;
+}
+
+/* Add some cool paragraph effects */
+.App-header p {
+  font-size: 1.5rem;
+  color: #f0f0f0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 30px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.App-header p:hover {
+  color: #ff6347;
+  transform: scale(1.05);
+}
+
+/* Add a stylish button with animation */
+.App-button {
+  background-color: #61dafb;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  color: #282c34;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.App-button:hover {
+  background-color: #ff6347;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a new icon section */
+.App-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  font-size: 3rem;
+}
+
+.App-icons a {
+  color: #fff;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover Effects for Social Media Icons */
+.App-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Custom Colors for Social Media Icons */
+.App-icons a.linkedin {
+  color: hwb(201 5% 1%); /* LinkedIn */
+}
+
+.App-icons a.linkedin:hover {
+  color: hsl(246, 83%, 49%); /* Darker LinkedIn blue on hover */
+}
+
+.App-icons a.github {
+  color: #050303; /* GitHub (Black) */
+}
+
+.App-icons a.github:hover {
+  color: #000; /* Darker black on hover */
+}
+
+.App-icons a.youtube {
+  color: #ff0000; /* YouTube Red */
+}
+
+.App-icons a.youtube:hover {
+  color: #cc0000; /* Darker Red on hover */
+}
+
+.App-icons a.twitter {
+  color: #1da1f2; /* Twitter Blue */
+}
+
+.App-icons a.twitter:hover {
+  color: #0d95e8; /* Darker Blue on hover */
+}
+
+.App-icons a.instagram {
+  color: #e4405f; /* Instagram Pink */
+}
+
+.App-icons a.instagram:hover {
+  color: #f58529; /* Instagram Orange on hover */
+}
+
+/* Footer section */
+footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .App-header p {
+    font-size: 1.2rem;
+  }
+
+  .App-icons {
+    font-size: 2.5rem;
+  }
+
+  .App-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
